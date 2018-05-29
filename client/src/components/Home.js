@@ -1,8 +1,8 @@
 //Should just be a welcome page?
 //Maybe a carousel of photos?
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import axios from 'axios';
+
+
 
 class Home extends Component {
   // constructor(props) {
