@@ -5,7 +5,7 @@ import Home from '../components/Home.js';
 import About from '../components/About.js';
 import GuestsAll from '../components/GuestsAll.js';
 import Experiences from '../components/Experiences.js';
-import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
 
 class App extends Component {
   render() {
