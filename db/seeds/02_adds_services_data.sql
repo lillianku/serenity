@@ -1,4 +1,4 @@
-\c serenity
+-- \c serenity
 
 INSERT INTO services(experience_id, service_name, description, allergens, duration, price)
 VALUES(1, 'Restorative Yoga', 'Restorative yoga is a form of yoga that seeks to achieve physical, mental and emotional relaxation with the aid of props. The use of props makes it easier for you to maintain balance while you are stimulating and relaxing your body.', '', 60, 40),

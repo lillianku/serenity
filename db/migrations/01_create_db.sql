@@ -1,6 +1,6 @@
-CREATE DATABASE serenity;
-
-\c serenity
+-- CREATE DATABASE serenity;
+--
+-- \c serenity
 
 CREATE TABLE experiences(
   experience_id SERIAL PRIMARY KEY,

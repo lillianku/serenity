@@ -1,4 +1,4 @@
-\c serenity
+-- \c serenity
 
 INSERT INTO experiences(experience_name, description)
 VALUES ('Classes', 'Serenity offers a range of classes that will allow you to restore body, mind, and spirit.'),
