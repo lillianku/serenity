@@ -10,7 +10,7 @@ const
 //MIDDLEWARE
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-// app.use('/experiences', ExperiencesRouter);
+app.use('/experiences', ExperiencesRouter);
 app.use('/guests', GuestsRouter);
 app.use(express.static(path.resolve(__dirname, './client/build')));
 
