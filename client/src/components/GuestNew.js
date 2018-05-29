@@ -45,7 +45,7 @@ class GuestNew extends Component {
     axios.post(`/guests`, {username, first_name, last_name, email, phone, allergies, comments}).then(res => {
       this.props.history.push(`/guests`);
     }).catch(e => {
-      alert('A new guest profile could not be created.')
+      alert('A new guest profile could not be created')
     });
   }
 }
