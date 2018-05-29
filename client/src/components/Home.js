@@ -5,29 +5,30 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 
 class Home extends Component {
-  constructor(props) {
-  super(props)
-  this.state = {experiences: [], loading: true };
-  }
-
+  // constructor(props) {
+  // super(props)
+  // this.state = {experiences: [], loading: true };
+  // }
+  //
   render () {
-    const { loading, experiences } = this.state;
-    const className = "Home Page";
-
-    if(loading) {
-      return <div className={className}>loading...</div>;
-    }
+  //   const { loading, experiences } = this.state;
+  //   const className = "Home Page";
+  //
+  //   if(loading) {
+  //     return <div className={className}>loading...</div>;
+  //   }
     return (
-      <div className={className}>
+      <div >
         <h1>WELCOME TO THE SERENITY SPA!</h1>
-        <h2>A Full Service Spa</h2> 
-        <ul>
+        <h2>A Full Service Spa</h2>
+        {/* <ul>
           {experiences.map(experience => this.renderLink(experience))}
-        </ul>
+        </ul> */}
       </div>
     );
   }
 
+};
 //need to add renderLink to show experiences by ID
 //need to add componentDidMount (should I wait until backend is built?)
   export default Home;
