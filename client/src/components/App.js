@@ -4,7 +4,9 @@ import './App.css';
 import Home from '../components/Home.js';
 import About from '../components/About.js';
 import GuestsAll from '../components/GuestsAll.js';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Experiences from '../components/Experiences.js';
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
+
 
 class App extends Component {
   render() {
@@ -17,15 +19,18 @@ class App extends Component {
           </header>
 
           <Switch>
+              <Redirect exact from='/' to='/home' />
               <Route exact path='/home' component={Home} />
               <Route exact path='/about' component={About} />
               <Route exact path='/guests' component={GuestsAll} />
+              <Route exact path='/experiences' component={Experiences} />
           </Switch>
 
             <ul className="nav-links">
               <li> <Link to="/home">Serenity Spa</Link> </li>
               <li> <Link to="/about">About Serenity Spa</Link> </li>
               <li> <Link to="/guests">Guests</Link> </li>
+              <li> <Link to="/experiences">Serenity Spa Experiences</Link> </li>
             </ul>
 
           </div>
