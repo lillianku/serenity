@@ -3,6 +3,7 @@ import logo from '../logo.svg';
 import './App.css';
 import Home from '../components/Home.js';
 import About from '../components/About.js';
+import GuestsAll from '../components/GuestsAll.js';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 class App extends Component {
@@ -14,15 +15,17 @@ class App extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">Welcome to the Serenity Spa</h1>
           </header>
-          
+
           <Switch>
               <Route exact path='/home' component={Home} />
               <Route exact path='/about' component={About} />
+              <Route exact path='/guests' component={GuestsAll} />
           </Switch>
 
             <ul className="nav-links">
               <li> <Link to="/home">Serenity Spa</Link> </li>
               <li> <Link to="/about">About Serenity Spa</Link> </li>
+              <li> <Link to="/guests">Guests</Link> </li>
             </ul>
 
           </div>
