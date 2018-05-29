@@ -2,7 +2,6 @@
 //This is where we do the .then/.catch stuff
 const express = require('express'),
       ExperiencesRouter = express.Router(),
-      db = require('.././db/donfig'),
       Experiences = require('.././models/experiences');
 
 ExperiencesRouter.get('/', (req,res) => {
@@ -13,7 +12,7 @@ ExperiencesRouter.get('/', (req,res) => {
   });
 });
 
-ExperiencesRouter.get('/:experienceid', (req,res) => {
+ExperiencesRouter.get('/:id', (req,res) => {
   Experiences.findById(req.params).then((experience) => {
     res.json(experience);
   }).catch(error => {
@@ -28,3 +27,5 @@ ExperiencesRouter.get('/:experienceid/:serviceid', (req,res) => {
     res.status(500).json({message: 'An error occurred'});
   });
 });
+
+module.exports = ExperiencesRouter;

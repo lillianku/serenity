@@ -16,9 +16,10 @@ Experiences.findById = (experienceid) => {
 };
 
 //find experienceid then service by id
-Experiences.findByTwoIds = (serviceid) => {
-  const {id} = serviceid;
+Experiences.findByTwoIds = (paramsData) => {
+  const {experienceid, serviceid} = paramsData;
   return db.one(`SELECT * FROM services
-    WHERE experience_id=$1 AND service_id =$2`, id)
-}
-//for testing 
+    WHERE experience_id=$1 AND service_id =$2`, [experienceid, serviceid])
+};
+
+module.exports = Experiences;
