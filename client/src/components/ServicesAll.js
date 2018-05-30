@@ -22,8 +22,8 @@ class ServicesAll extends Component {
 
     return (
       <div className="services">
-        <h1>{experience.experience_name}</h1>
-        <h2>{this.renderServices()}</h2>
+        <h2>{experience.experience_name}</h2>
+        <h3>{this.renderServices()}</h3>
       </div>
     );
   };

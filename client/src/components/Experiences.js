@@ -20,8 +20,7 @@ class Experiences extends Component {
     }
     return (
       <div >
-        <h1>WELCOME TO THE SERENITY SPA!</h1>
-        <h2>A Full Service Spa</h2>
+        <h2>SERENITY SPA EXPERIENCES</h2>
         <ul>
           {experiences.map(experience => this.renderExperiencesLink(experience))}
         </ul>

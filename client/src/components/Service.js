@@ -15,11 +15,11 @@ class Service extends Component {
 
     return (
       <div className="Service">
-        <h1>{service.service_name}</h1>
-        <h2><b>Description:</b> {service.description}</h2>
-        <h2><b>Potential Allergens:</b> {this.renderAllergens()}</h2>
-        <h2><b>Service Duration:</b> {service.duration} minutes</h2>
-        <h2><b>Price:</b> ${service.price}</h2>
+        <h2>{service.service_name}</h2>
+        <h3><b>Description:</b> {service.description}</h3>
+        <h3><b>Potential Allergens:</b> {this.renderAllergens()}</h3>
+        <h3><b>Service Duration:</b> {service.duration} minutes</h3>
+        <h3><b>Price:</b> ${service.price}</h3>
       </div>
     );
   }

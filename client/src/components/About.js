@@ -6,7 +6,7 @@ class About extends Component {
   render() {
     return (
       <div className="About">
-        <h1>WHY SERENITY SPA?</h1>
+        <h2>WHY SERENITY SPA?</h2>
         {/* Placeholder for image */}
         {/* <div className="#">
         <img className="App-logo" onClick={() => this.handleClick()} src={#}></img>
