@@ -46,7 +46,6 @@ class GuestNew extends Component {
       this.props.history.push(`/guests`);
     }).catch(e => {
       alert('A new guest profile could not be created')
-      //test 
     });
   }
 }
