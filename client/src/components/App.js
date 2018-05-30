@@ -6,6 +6,8 @@ import About from '../components/About.js';
 import GuestsAll from '../components/GuestsAll.js';
 import Experiences from '../components/Experiences.js';
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
+import GuestNew from '../components/GuestNew.js';
+
 
 class App extends Component {
   render() {
@@ -23,6 +25,7 @@ class App extends Component {
               <Route exact path='/about' component={About} />
               <Route exact path='/guests' component={GuestsAll} />
               <Route exact path='/experiences' component={Experiences} />
+              <Route exact path='/newguest' component={GuestNew} />
           </Switch>
 
             <ul className="nav-links">
@@ -30,6 +33,7 @@ class App extends Component {
               <li> <Link to="/about">About Serenity Spa</Link> </li>
               <li> <Link to="/guests">Guests</Link> </li>
               <li> <Link to="/experiences">Serenity Spa Experiences</Link> </li>
+              <li> <Link to="/newguest">Create new guest profile</Link> </li>
             </ul>
 
           </div>
