@@ -41,4 +41,24 @@ Guest.findByIdAndRemove = (guestId) => {
   return db.one(`DELETE FROM guests WHERE guest_id=$1 RETURNING *`, id)
 };
 
+// find packages for a guest by guest ID
+Guest.findPackage = (guestId) => {
+  let {id} = guestId;
+  return db.query(`SELECT * FROM packages WHERE guest_id=$1`, id)
+};
+
+// add a new package to a guest
+Guest.savePackage = (packageData) => {
+  const {guest_id, service_id} = packageData;
+  return db.one(`INSERT INTO packages(guest_id, service_id)
+    VALUES($1, $2)
+    RETURNING *`, [guest_id, service_id])
+};
+
+// remove a package from a guest
+Guest.findByIdAndRemovePackage = (packageData) => {
+  const {guestid, packageid} = packageData;
+  return db.one(`DELETE FROM packages WHERE package_id=$1 AND guest_id=$2 RETURNING *`, [packageid, guestid])
+};
+
 module.exports = Guest;
