@@ -18,6 +18,18 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <h1 className="App-title">Serenity</h1>
+            {/* <h4 className="App-tagline">A Full Service Spa</h4> */}
+
+            <ul className="nav-links">
+              <li> <a className="link-style"> <Link to="/home">Serenity Spa</Link> </a> </li>
+              <li> <a className="link-style"> <Link to="/about">About Serenity Spa</Link> </a> </li>
+              <li> <a className="link-style"> <Link to="/guests">Guests</Link></a>  </li>
+              <li> <a className="link-style"> <Link to="/newguest">Create new guest profile</Link></a>  </li>
+              <li> <a className="link-style"> <Link to="/experiences">Serenity Spa Experiences</Link></a> </li>
+            </ul>
+
+            <br />
+
           </header>
 
           <Switch>
@@ -32,14 +44,7 @@ class App extends Component {
               <Route exact path='/experiences/:experienceid/services/:serviceid' component={Service} />
           </Switch>
 
-            <ul className="nav-links">
-              <li> <a className="link-style"> <Link to="/home">Serenity Spa</Link> </a> </li>
-              <li> <a className="link-style"> <Link to="/about">About Serenity Spa</Link> </a> </li>
-              <li> <a className="link-style"> <Link to="/guests">Guests</Link></a>  </li>
-              <li> <a className="link-style"> <Link to="/newguest">Create new guest profile</Link></a>  </li>
-              <li> <a className="link-style"> <Link to="/experiences">Serenity Spa Experiences</Link></a> </li>
 
-            </ul>
 
           </div>
 
