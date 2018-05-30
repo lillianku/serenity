@@ -6,6 +6,7 @@ import About from '../components/About.js';
 import GuestsAll from '../components/GuestsAll.js';
 import Guest from '../components/Guest.js';
 import Experiences from '../components/Experiences.js';
+import Service from '../components/Service.js';
 import ServicesAll from '../components/ServicesAll.js';
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
 import GuestNew from '../components/GuestNew.js';
@@ -30,6 +31,7 @@ class App extends Component {
               <Route exact path='/guests/:id' component={Guest} />
               <Route exact path='/experiences' component={Experiences} />
               <Route exact path='/experiences/:id' component={ServicesAll} />
+              <Route exact path='/experiences/:experienceid/services/:serviceid' component={Service} />
           </Switch>
 
             <ul className="nav-links">
