@@ -18,7 +18,7 @@ Experiences.findById = (experienceid) => {
 //find services by experienceid
 Experiences.findServicesByExperienceId = (experienceid) => {
   const {id} = experienceid;
-  return db.one(`SELECT * FROM services
+  return db.many(`SELECT * FROM services
     WHERE experience_id=$1`, id)
 };
 
