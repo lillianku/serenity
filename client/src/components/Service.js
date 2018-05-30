@@ -12,7 +12,7 @@ class Service extends Component {
   render() {
     const { service } = this.state;
     if(!service) { return <div>Loading Service</div>; }
-
+    console.log(service.description);
     return (
       <div className="Service">
         <h2>{service.service_name}</h2>
