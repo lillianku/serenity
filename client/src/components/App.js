@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import './App.css';
 import Home from '../components/Home.js';
 import About from '../components/About.js';
@@ -18,8 +17,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to the Serenity Spa</h1>
+            <h1 className="App-title">Serenity</h1>
           </header>
 
           <Switch>
@@ -35,11 +33,11 @@ class App extends Component {
           </Switch>
 
             <ul className="nav-links">
-              <li> <Link to="/home">Serenity Spa</Link> </li>
-              <li> <Link to="/about">About Serenity Spa</Link> </li>
-              <li> <Link to="/guests">Guests</Link> </li>
-              <li> <Link to="/newguest">Create new guest profile</Link> </li>
-              <li> <Link to="/experiences">Serenity Spa Experiences</Link> </li>
+              <li> <a className="link-style"> <Link to="/home">Serenity Spa</Link> </a> </li>
+              <li> <a className="link-style"> <Link to="/about">About Serenity Spa</Link> </a> </li>
+              <li> <a className="link-style"> <Link to="/guests">Guests</Link></a>  </li>
+              <li> <a className="link-style"> <Link to="/newguest">Create new guest profile</Link></a>  </li>
+              <li> <a className="link-style"> <Link to="/experiences">Serenity Spa Experiences</Link></a> </li>
 
             </ul>
 
