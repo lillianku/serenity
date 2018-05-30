@@ -3,7 +3,8 @@
 }
 
 .App-title {
-  line-height: 0.75em;;
+  line-height: 0.75em;
+  height: 175px;
 }
 
 h1 {
@@ -25,36 +26,38 @@ p {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: black;
+  background-color: #2F4F4F;
+
 }
 
 li {
   list-style-type: none;
+
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #808080; 
+  text-decoration: none;
 }
 
 .link-style {
-    float: left;
-}
-
-.link-style a {
-  display: block;
+  float: center;
+  display: inline-block;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
-
-.link-style a:hover {
-  background-color: #111;
+  font-family: 'Muli', sans-serif;
+  font-size: 18px;
 }
 
 .spa-image {
-max-width: 100%;
-max-height: 50%;
-margin-top: -20px;
-overflow: hidden;
-}
-
-.spa-image img {
-background-color: red; 
+  max-width: 100%;
+  max-height: 50%;
+  margin-top: -20px;
+  overflow: hidden;
 }

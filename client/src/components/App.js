@@ -21,11 +21,11 @@ class App extends Component {
             {/* <h4 className="App-tagline">A Full Service Spa</h4> */}
 
             <ul className="nav-links">
-              <li> <a className="link-style"> <Link to="/home">Serenity Spa</Link> </a> </li>
-              <li> <a className="link-style"> <Link to="/about">About Serenity Spa</Link> </a> </li>
-              <li> <a className="link-style"> <Link to="/guests">Guests</Link></a>  </li>
-              <li> <a className="link-style"> <Link to="/newguest">Create new guest profile</Link></a>  </li>
-              <li> <a className="link-style"> <Link to="/experiences">Serenity Spa Experiences</Link></a> </li>
+              <li className="link-style"> <Link to="/home">Home</Link></li>
+              <li className="link-style"> <Link to="/about">About Us</Link></li>
+              <li className="link-style"> <Link to="/experiences">Spa Experiences</Link></li>
+              <li className="link-style"> <Link to="/guests">Guests</Link></li>
+              <li className="link-style"> <Link to="/newguest">Create new guest profile</Link></li>
             </ul>
 
             <br />
