@@ -20,7 +20,7 @@ ExperiencesRouter.get('/:id', (req,res) => {
   });
 });
 
-ExperiencesRouter.get('/:experienceid/services', (req,res) => {
+ExperiencesRouter.get('/:id/services', (req,res) => {
   Experiences.findServicesByExperienceId(req.params).then((services) => {
     res.json(services);
   }).catch(error => {
@@ -28,7 +28,7 @@ ExperiencesRouter.get('/:experienceid/services', (req,res) => {
   });
 });
 
-ExperiencesRouter.get('/:experienceid/:serviceid', (req,res) => {
+ExperiencesRouter.get('/:experienceid/services/:serviceid', (req,res) => {
   Experiences.findByTwoIds(req.params).then((service) => {
     res.json(service);
   }).catch(error => {
