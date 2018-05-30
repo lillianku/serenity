@@ -15,6 +15,13 @@ Experiences.findById = (experienceid) => {
     WHERE experience_id=$1`, id)
 };
 
+//find services by experienceid
+Experiences.findServicesByExperienceId = (experienceid) => {
+  const {id} = experienceid;
+  return db.one(`SELECT * FROM services
+    WHERE experience_id=$1`, id)
+};
+
 //find experienceid then service by id
 Experiences.findByTwoIds = (paramsData) => {
   const {experienceid, serviceid} = paramsData;

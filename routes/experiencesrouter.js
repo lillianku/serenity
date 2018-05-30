@@ -20,6 +20,14 @@ ExperiencesRouter.get('/:id', (req,res) => {
   });
 });
 
+ExperiencesRouter.get('/:experienceid/services', (req,res) => {
+  Experiences.findServicesByExperienceId(req.params).then((services) => {
+    res.json(services);
+  }).catch(error => {
+    res.status(500).json({message: 'An error occured'});
+  });
+});
+
 ExperiencesRouter.get('/:experienceid/:serviceid', (req,res) => {
   Experiences.findByTwoIds(req.params).then((service) => {
     res.json(service);
