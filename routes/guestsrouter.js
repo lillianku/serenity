@@ -77,6 +77,15 @@ GuestsRouter.delete('/:guestid/package/:packageid', (req, res) => {
   }).catch((error) => {
     res.status(500).json({message: 'Something Went Wrong: delete package'});
   });
-})
+});
+
+// get a service name by service ID
+GuestsRouter.get('/services/:id', (req, res) => {
+  Guest.findServiceName(req.params).then((service) => {
+    res.json(service);
+  }).catch((error) => {
+    res.status(500).json({message: 'Something Went Wrong: find service name'});
+  });
+});
 
 module.exports = GuestsRouter;

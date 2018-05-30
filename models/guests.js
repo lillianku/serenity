@@ -61,4 +61,10 @@ Guest.findByIdAndRemovePackage = (packageData) => {
   return db.one(`DELETE FROM packages WHERE package_id=$1 AND guest_id=$2 RETURNING *`, [packageid, guestid])
 };
 
+// find service name by service ID
+Guest.findServiceName = (serviceId) => {
+  const {id} = serviceId;
+  return db.one(`SELECT service_name FROM services WHERE service_id=$1`, id);
+};
+
 module.exports = Guest;

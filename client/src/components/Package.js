@@ -6,7 +6,7 @@ import axios from 'axios';
 class Package extends Component {
   constructor(props) {
     super(props)
-    this.state = {guest: null, spaPackage: null};
+    this.state = {guest: null, spaPackage: null, service: null};
   }
 
   render() {
@@ -34,6 +34,9 @@ class Package extends Component {
   };
 
   renderPackage(pkg){
+    // axios.get(`/guests/services/${pkg.service_id}`).then(res=>{
+    //   this.setState({service:res.data});
+    // });
     return(
       <h2 key={pkg.package_id}>{pkg.service_id}</h2>
     );
@@ -47,7 +50,6 @@ class Package extends Component {
     axios.get(`/guests/${id}/package`).then(res => {
       this.setState({spaPackage: res.data});
     });
-
   }
 
 }
