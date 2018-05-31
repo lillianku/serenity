@@ -22,8 +22,12 @@ class ServicesAll extends Component {
 
     return (
       <div className="services">
-        <h2>{experience.experience_name}</h2>
-        <h3>{this.renderServices()}</h3>
+        <br/>
+        <h2 className="IndivExTitle">{experience.experience_name}</h2>
+        <br/>
+        <div className="ServicesButtons">
+          <h3>{this.renderServices()}</h3>
+        </div>
       </div>
     );
   };
@@ -47,7 +51,7 @@ class ServicesAll extends Component {
   renderService(service){
     const{experience} = this.state;
     return(
-      <li key={service.service_id}>
+      <li className="ServicesLinks" key={service.service_id}>
         <Link to={`/experiences/${experience.experience_id}/services/${service.service_id}`}>{service.service_name}</Link>
       </li>
     );

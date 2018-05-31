@@ -18,6 +18,10 @@ h2 {
   font-weight: bold;
 }
 
+h3 {
+  font-size: 20px;
+}
+
 .nav-links {
   list-style-type: none;
   margin: 0;
@@ -95,6 +99,9 @@ text-align: left;
   font-variant: small-caps;
 }
 
+.experienceLinks a{
+  color: #2F4F4F;
+}
 .experienceLinks a:visited {
     color: #2F4F4F;
 }
@@ -103,6 +110,52 @@ text-align: left;
   background-color: white ;
   height: 350px;
   margin-top: -20px;
+}
+
+.IndivExTitle{
+  text-transform: uppercase;
+  font-size: 40px;
+  padding-left: 50px;
+}
+
+.services {
+  font-size: 20px;
+  color: white;
+  font-family: 'Muli', sans-serif;
+  background-image: url('../aboutus.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  margin-top: -20px;
+  text-align: left;
+  font-variant: small-caps;
+}
+
+.ServicesButtons{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.ServicesLinks {
+  background-color: white;
+  color: #2F4F4F;
+  display: inline-block;
+  padding:20px;
+  margin: 50px;
+  border-radius: 10%;
+}
+.ServicesLinks a {
+  color: #2F4F4F;
+}
+
+.ServicesLinks a:visited {
+  color: #2F4F4F;
+}
+.ServicesLinks a:hover {
+  color: #2F4F4F;
+}
+.ServicesLinks a:active {
+  color: #2F4F4F;
 }
 
 .PackageList {
