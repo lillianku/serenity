@@ -10,7 +10,7 @@ class ServiceName extends Component {
 
   render(){
     return (
-      <h2>{this.state.name}</h2>
+      <li>{this.state.name}</li>
     );
   };
 
