@@ -26,7 +26,7 @@ class GuestsAll extends Component {
 
   renderGuestLink(guest) {
     return (
-      <li key={guest.guest_id}>
+      <li className="guestLink" key={guest.guest_id}>
         <Link to={`/guests/${guest.guest_id}`}>{guest.first_name} {guest.last_name}</Link>
       </li>
     );

@@ -177,3 +177,24 @@ text-align: left;
 .serviceFont {
   font-family: 'Muli', sans-serif;
 }
+
+.GuestsAll {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 20px;
+}
+.guestLink a {
+  color: #2F4F4F;
+  font-size: 20px;
+  font-variant: small-caps;
+  background-color: white;
+  padding:20px;
+  border-radius: 10%;
+  border: 2px solid;
+  border-color: #2F4F4F;
+}
+.guestButtons {
+  margin: 10px;
+}
