@@ -16,12 +16,14 @@ class Service extends Component {
     if(!service) { return <div>Loading Service</div>; }
     return (
       <div className="Service">
+        <br />
         <h2>{service.service_name}</h2>
-        <h3><b>Description:</b> {service.description}</h3>
-        <h3><b>Potential Allergens:</b> {this.renderAllergens()}</h3>
-        <h3><b>Service Duration:</b> {service.duration} minutes</h3>
-        <h3><b>Price:</b> ${service.price}</h3>
-
+        <h3 className="serviceFont">{service.description}</h3>
+        <br />
+        <h4 className="serviceFont"><b>Potential Allergens:</b> {this.renderAllergens()}</h4>
+        <h4 className="serviceFont"><b>Service Duration:</b> {service.duration} minutes</h4>
+        <h4 className="serviceFont"><b>Price:</b> ${service.price}</h4>
+        <br />
         <form onSubmit={this.handleSubmit}>
          <input type="text" value={guest_id} name="guest_id" placeholder="guest id" onChange={this.handleChange}/>
          <input type="submit" value="Add to your Package" />

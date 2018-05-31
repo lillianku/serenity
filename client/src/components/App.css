@@ -16,10 +16,12 @@ h2 {
   font-family: 'Muli', sans-serif;
   font-size: 30px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 h3 {
   font-size: 20px;
+
 }
 
 .nav-links {
@@ -160,4 +162,18 @@ text-align: left;
 
 .PackageList {
   font-size: 20px;
+}
+
+.Service {
+  background-color: white;
+  color: #2F4F4F;
+  height: 500px;
+  margin-top: -20px;
+  text-align: left;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.serviceFont {
+  font-family: 'Muli', sans-serif;
 }
