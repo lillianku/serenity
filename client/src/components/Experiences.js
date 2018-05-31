@@ -24,23 +24,26 @@ class Experiences extends Component {
     }
     return (
       <div >
+
         <h2>SERENITY SPA EXPERIENCES</h2>
         <ul>
           {experiences.map(experience => this.renderExperiencesLink(experience))}
         </ul>
-        <img className="xperiences" onClick={() => this.handleClick()} src={myImage} alt="classes"></img>
-        <img className="xperiences" onClick={() => this.handleClick()} src={myImage2} alt="facials"></img>
-        <img className="xperiences" onClick={() => this.handleClick()} src={myImage3} alt="massages"></img>
-        <img className="xperiences" onClick={() => this.handleClick()} src={myImage4} alt="amenities"></img>
+
+
+        <img className="xperiences" src={myImage} alt="classes"></img>
+        <img className="xperiences" src={myImage2} alt="facials"></img>
+        <img className="xperiences" src={myImage3} alt="massages"></img>
+        <img className="xperiences" src={myImage4} alt="amenities"></img>
       </div>
     );
   }
 
-  handleClick() {
-  this.setState(prevState => {
-    alert('TEST!')
-    });
-  }
+  // handleClick() {
+  // this.setState(prevState => {
+  //   alert('TEST!')
+  //   });
+  // }
 
   renderExperiencesLink(experience) {
     return (
