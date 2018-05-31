@@ -66,7 +66,6 @@ class Service extends Component {
 
   componentDidMount() {
     const {experienceid, serviceid} = this.props.match.params;
-    const {username} = this.state;
     axios.get(`/experiences/${experienceid}/services/${serviceid}`).then(res => {
       this.setState({service: res.data})
     });
