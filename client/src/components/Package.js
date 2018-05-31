@@ -16,8 +16,8 @@ class Package extends Component {
 
     return (
       <div className="Package">
-        <h1>{guest.first_name} {guest.last_name}</h1>
-        <h2>{this.renderPackages()}</h2>
+        <h2>{guest.first_name} {guest.last_name}</h2>
+        <span className="PackageList">{this.renderPackages()}</span>
       </div>
     );
   }
@@ -36,7 +36,7 @@ class Package extends Component {
 
   renderPackage(pkg){
     return(
-      <span key={pkg.package_id}><ServiceName service_id={pkg.service_id}/></span>
+      <li key={pkg.package_id}><ServiceName service_id={pkg.service_id}/></li>
     );
   };
 

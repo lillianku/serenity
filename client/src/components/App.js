@@ -7,6 +7,7 @@ import Guest from '../components/Guest.js';
 import Experiences from '../components/Experiences.js';
 import Service from '../components/Service.js';
 import ServicesAll from '../components/ServicesAll.js';
+import Package from '../components/Package.js';
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
 import GuestNew from '../components/GuestNew.js';
 
@@ -25,7 +26,7 @@ class App extends Component {
               <li className="link-style"> <Link to="/about">About Us</Link></li>
               <li className="link-style"> <Link to="/experiences">Spa Experiences</Link></li>
               <li className="link-style"> <Link to="/guests">Guests</Link></li>
-              <li className="link-style"> <Link to="/newguest">Create new guest profile</Link></li>
+              <li className="link-style"> <Link to="/newguest">Create New Guest Profile</Link></li>
             </ul>
 
             <br />
@@ -42,6 +43,7 @@ class App extends Component {
               <Route exact path='/experiences' component={Experiences} />
               <Route exact path='/experiences/:id' component={ServicesAll} />
               <Route exact path='/experiences/:experienceid/services/:serviceid' component={Service} />
+              <Route exact path='/guests/:id/package' component={Package} />
           </Switch>
 
 
