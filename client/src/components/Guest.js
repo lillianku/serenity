@@ -11,6 +11,7 @@ class Guest extends React.Component {
     this.state = {username: '', first_name: '', last_name: '', email: '', phone: '', allergies: '', comments: ''};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   render () {
@@ -34,8 +35,10 @@ class Guest extends React.Component {
         Guest Comments: <input value={comments} name="comments" onChange={this.handleChange}/>
         <br />
         <button onClick={this.handleSubmit}>Submit</button>
-
+        <br />
         <Link to={`/guests/${id}/package`}>View Your Spa Package</Link>
+        <br />
+        <button onClick={this.handleDelete}>Delete Your Profile</button>
 
       </div>
     );
@@ -56,6 +59,16 @@ class Guest extends React.Component {
       this.props.history.push(`/guests/${id}`);
     }).catch(e => {
       alert('Oops! Something went wrong!');
+    });
+  }
+
+  handleDelete () {
+    const { id } = this.props.match.params;
+    axios.delete(`/guests/${id}`).then(res => {
+      alert('Your serene profile has been deleted');
+      this.props.history.push(`/guests`);
+    }).catch(e => {
+      alert('Oops! Could not delete your profile!');
     });
   }
 
