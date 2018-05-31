@@ -2,11 +2,12 @@
 //Details for a guest's package should be rendered
 import React, { Component } from 'react';
 import axios from 'axios';
+import ServiceName from './ServiceName.js';
 
 class Package extends Component {
   constructor(props) {
     super(props)
-    this.state = {guest: null, spaPackage: null, service: null};
+    this.state = {guest: null, packageServices: null};
   }
 
   render() {
@@ -22,23 +23,20 @@ class Package extends Component {
   }
 
   renderPackages (){
-    const {spaPackage} = this.state;
-    if(!spaPackage) {
+    const {packageServices} = this.state;
+    if(!packageServices) {
       return <div>Loading Package</div>;
     };
     return (
       <ul>
-        {spaPackage.map(pkg => this.renderPackage(pkg))}
+        {packageServices.map(pkg => this.renderPackage(pkg))}
       </ul>
     );
   };
 
   renderPackage(pkg){
-    // axios.get(`/guests/services/${pkg.service_id}`).then(res=>{
-    //   this.setState({service:res.data});
-    // });
     return(
-      <h2 key={pkg.package_id}>{pkg.service_id}</h2>
+      <span key={pkg.package_id}><ServiceName service_id={pkg.service_id}/></span>
     );
   };
 
@@ -48,7 +46,7 @@ class Package extends Component {
       this.setState({guest: res.data});
     });
     axios.get(`/guests/${id}/package`).then(res => {
-      this.setState({spaPackage: res.data});
+      this.setState({packageServices: res.data});
     });
   }
 
