@@ -23,9 +23,10 @@ class Experiences extends Component {
       return <div className={className}>loading...</div>;
     }
     return (
-      <div >
-
-        <h2>SERENITY SPA EXPERIENCES</h2>
+      <div className="ExperiencesDiv">
+        <br />
+        <h2>SPA EXPERIENCES</h2>
+        <br />
         <ul>
           {experiences.map(experience => this.renderExperiencesLink(experience))}
         </ul>
@@ -47,7 +48,7 @@ class Experiences extends Component {
 
   renderExperiencesLink(experience) {
     return (
-      <li key={experience.experience_id}>
+      <li  className="experienceLinks" key={experience.experience_id}>
         <Link to={`/experiences/${experience.experience_id}`}>{experience.experience_name}</Link>
       </li>
     );
