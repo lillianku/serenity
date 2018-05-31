@@ -16,20 +16,23 @@ class GuestNew extends Component {
 
     return (
       <form className="GuestNew" onSubmit={this.handleSubmit}>
-        Username: <input value={username} name="username" onChange={this.handleChange}/>
         <br />
-        First Name: <input value={first_name} name="first_name" onChange={this.handleChange} />
+        <h2>CREATE YOUR GUEST PROFILE</h2>
         <br />
-        Last Name: <input value={last_name} name="last_name" onChange={this.handleChange} />
+        Username: <input value={username} name="username" onChange={this.handleChange} required/>
         <br />
-        Email Address: <input value={email} name="email" onChange={this.handleChange} />
+        First Name: <input value={first_name} name="first_name" onChange={this.handleChange} required/>
         <br />
-        Phone: <input value={phone} name="phone" onChange={this.handleChange} />
+        Last Name: <input value={last_name} name="last_name" onChange={this.handleChange} required/>
         <br />
-        Allergies: <input value={allergies} name="allergies" onChange={this.handleChange} />
+        Email Address: <input value={email} name="email" onChange={this.handleChange} required/>
         <br />
-        Comments: <input value={comments} name="comments" onChange={this.handleChange} />
-        <input type="submit" value="submit"/>
+        Phone: <input value={phone} name="phone" onChange={this.handleChange} required/>
+        <br />
+        Allergies: <input value={allergies} name="allergies" onChange={this.handleChange} required/>
+        <br />
+        Comments: <input value={comments} name="comments" onChange={this.handleChange} required/>
+        <input className="update-button" type="submit" value="submit"/>
       </form>
     );
   }
