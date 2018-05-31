@@ -57,7 +57,6 @@ class Experiences extends Component {
   componentDidMount () {
     axios.get('/experiences').then(res => {
       this.setState({experiences: res.data});
-      console.log(res.data);
     });
   }
 

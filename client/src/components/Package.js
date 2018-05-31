@@ -35,10 +35,22 @@ class Package extends Component {
   };
 
   renderPackage(pkg){
+    const {guest} = this.state;
     return(
-      <li key={pkg.package_id}><ServiceName service_id={pkg.service_id}/></li>
+        <li key={pkg.package_id}>
+          <ServiceName service_id={pkg.service_id} guest_id={guest.guest_id} package_id={pkg.package_id} myhistory={this.props.history}/>
+          <button onClick={() =>this.handleRemove(pkg.package_id)}>Remove</button>
+        </li>
     );
   };
+
+  handleRemove (id) {
+    const {guest, packageServices} = this.state;
+    axios.delete(`/guests/${guest.guest_id}/package/${id}`).then(res => {
+      const newPackageServices = packageServices.filter(pkg => pkg.package_id !== id);
+      this.setState({packageServices: newPackageServices})
+    });
+  }
 
   componentDidMount() {
     const {id} = this.props.match.params;

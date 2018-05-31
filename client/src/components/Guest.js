@@ -3,6 +3,7 @@
 //Should have a for where we can update the guest information
 import React from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 class Guest extends React.Component {
   constructor(props) {
@@ -10,13 +11,16 @@ class Guest extends React.Component {
     this.state = {username: '', first_name: '', last_name: '', email: '', phone: '', allergies: '', comments: ''};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   render () {
     const { username, first_name, last_name, email, phone, allergies, comments } = this.state;
+    const { id } = this.props.match.params;
 
     return (
       <div className="Guest">
+        <h2>Your Profile</h2>
         Guest Name: <input value={username} name="username" onChange={this.handleChange}/>
         <br />
         Guest First Name: <input value={first_name} name="first_name" onChange={this.handleChange}/>
@@ -31,7 +35,14 @@ class Guest extends React.Component {
         <br />
         Guest Comments: <input value={comments} name="comments" onChange={this.handleChange}/>
         <br />
-          <button onClick={this.handleSubmit}>Submit</button>
+        <br />
+
+        <span>
+          <button className="GuestButtons" onClick={this.handleSubmit}>Update</button>
+          <Link className="GuestButtons" to={`/guests/${id}/package`}>View Your Spa Package</Link>
+          <button className="GuestButtons" onClick={this.handleDelete}>Delete Your Profile</button>
+        </span>
+
       </div>
     );
   }
@@ -50,8 +61,17 @@ class Guest extends React.Component {
       alert('Your serene profile has been updated');
       this.props.history.push(`/guests/${id}`);
     }).catch(e => {
-      // console.warn(e);
       alert('Oops! Something went wrong!');
+    });
+  }
+
+  handleDelete () {
+    const { id } = this.props.match.params;
+    axios.delete(`/guests/${id}`).then(res => {
+      alert('Your serene profile has been deleted');
+      this.props.history.push(`/guests`);
+    }).catch(e => {
+      alert('Oops! Could not delete your profile!');
     });
   }
 
@@ -63,13 +83,13 @@ class Guest extends React.Component {
     });
   }
 
-  handleDelete () {
-    const { match, history } = this.props;
-    const { id } = match.params;
-    axios.delete(`/guests/${id}`).then(res => {
-      history.push('/guests');
-    });
-  }
+  // handleDelete () {
+  //   const { match, history } = this.props;
+  //   const { id } = match.params;
+  //   axios.delete(`/guests/${id}`).then(res => {
+  //     history.push('/guests');
+  //   });
+  // }
 
 
   componentDidMount () {

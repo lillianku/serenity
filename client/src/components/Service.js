@@ -6,13 +6,13 @@ import axios from 'axios';
 class Service extends Component {
   constructor(props) {
     super(props)
-    this.state = {service: null, guest_id: ''};
+    this.state = {service: null, username: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
   render() {
-    const { service, guest_id } = this.state;
+    const { service, username} = this.state;
     if(!service) { return <div>Loading Service</div>; }
     return (
       <div className="Service">
@@ -25,7 +25,7 @@ class Service extends Component {
         <h4 className="serviceFont"><b>Price:</b> ${service.price}</h4>
         <br />
         <form onSubmit={this.handleSubmit}>
-         <input type="text" value={guest_id} name="guest_id" placeholder="guest id" onChange={this.handleChange}/>
+         <input type="text" value={username} name="username" placeholder="Username" onChange={this.handleChange}/>
          <input type="submit" value="Add to your Package" />
        </form>
 
@@ -47,19 +47,20 @@ class Service extends Component {
     this.setState({
       [name]: value
     });
-   }
+  };
 
    handleSubmit(event) {
-     const {service}= this.state;
-     let guest_id = parseInt(this.state.guest_id, 10);
-     console.log(guest_id);
+     const {service, username}= this.state;
      const service_id = service.service_id;
-     console.log(service_id);
      event.preventDefault();
-     axios.post(`/guests/${guest_id}/package`, {guest_id, service_id}).then(res => {
-       this.props.history.push(`/guests/${guest_id}/package`); // change this to services page & add an alert
-     }).catch(event => {
-       alert('Service could not be added to package');
+
+     axios.get(`/guests/username/${username}`).then(res => {
+       let guest_id = res.data.guest_id;
+       axios.post(`/guests/${guest_id}/package`, {guest_id, service_id}).then(res => {
+         this.props.history.push(`/guests/${guest_id}/package`); // change this to services page & add an alert
+       }).catch(event => {
+         alert('Service could not be added to package');
+       });
      });
    }
 

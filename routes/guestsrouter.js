@@ -88,4 +88,13 @@ GuestsRouter.get('/services/:id', (req, res) => {
   });
 });
 
+// find id by username
+GuestsRouter.get('/username/:username', (req, res) => {
+  Guest.findId(req.params).then((guest) => {
+    res.json(guest);
+  }).catch((error) => {
+    res.status(500).json({message: 'Something Went Wrong: find guest id'});
+  });
+});
+
 module.exports = GuestsRouter;
