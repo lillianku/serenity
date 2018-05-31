@@ -4,6 +4,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import myImage from '.././classes.jpg';
+import myImage2 from '.././facial.jpg';
+import myImage3 from '.././massages.jpg';
+import myImage4 from '.././amenities.jpg';
 
 class Experiences extends Component {
   constructor(props) {
@@ -24,8 +28,18 @@ class Experiences extends Component {
         <ul>
           {experiences.map(experience => this.renderExperiencesLink(experience))}
         </ul>
+        <img className="xperiences" onClick={() => this.handleClick()} src={myImage} alt="classes"></img>
+        <img className="xperiences" onClick={() => this.handleClick()} src={myImage2} alt="facials"></img>
+        <img className="xperiences" onClick={() => this.handleClick()} src={myImage3} alt="massages"></img>
+        <img className="xperiences" onClick={() => this.handleClick()} src={myImage4} alt="amenities"></img>
       </div>
     );
+  }
+
+  handleClick() {
+  this.setState(prevState => {
+    alert('TEST!')
+    });
   }
 
   renderExperiencesLink(experience) {
