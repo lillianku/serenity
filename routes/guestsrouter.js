@@ -52,4 +52,40 @@ GuestsRouter.delete('/:id', (req, res) => {
   });
 });
 
+// get packages for each guest by guest ID
+GuestsRouter.get('/:id/package', (req, res) => {
+  Guest.findPackage(req.params).then((package) => {
+    res.json(package);
+  }).catch((error) => {
+    res.status(400).json({message: '404: Cannot Find Package'});
+  });
+});
+
+// add a package to a guest
+GuestsRouter.post('/:id/package', (req, res) => {
+  Guest.savePackage(req.body).then((package) => {
+    res.json(package);
+  }).catch((error) => {
+    res.status(500).json({message: 'Something Went Wrong: post package'});
+  });
+});
+
+// remove a package from the guest
+GuestsRouter.delete('/:guestid/package/:packageid', (req, res) => {
+  Guest.findByIdAndRemovePackage(req.params).then((package) => {
+    res.json(package);
+  }).catch((error) => {
+    res.status(500).json({message: 'Something Went Wrong: delete package'});
+  });
+});
+
+// get a service name by service ID
+GuestsRouter.get('/services/:id', (req, res) => {
+  Guest.findServiceName(req.params).then((service) => {
+    res.json(service);
+  }).catch((error) => {
+    res.status(500).json({message: 'Something Went Wrong: find service name'});
+  });
+});
+
 module.exports = GuestsRouter;
