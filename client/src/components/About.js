@@ -1,5 +1,6 @@
 //Create component for About page
 import React, { Component } from 'react';
+
 // import aboutus from '../aboutus.jpg';
 
 class About extends Component {
