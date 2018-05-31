@@ -214,3 +214,8 @@ input {
   background-color: white;
   border: none;
 }
+
+.update-button, button {
+  border-color: #2F4F4F;
+  border: 2px solid;
+}
