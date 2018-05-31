@@ -3,6 +3,7 @@
 //Should have a for where we can update the guest information
 import React from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 class Guest extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Guest extends React.Component {
 
   render () {
     const { username, first_name, last_name, email, phone, allergies, comments } = this.state;
+    const { id } = this.props.match.params;
 
     return (
       <div className="Guest">
@@ -31,7 +33,10 @@ class Guest extends React.Component {
         <br />
         Guest Comments: <input value={comments} name="comments" onChange={this.handleChange}/>
         <br />
-          <button onClick={this.handleSubmit}>Submit</button>
+        <button onClick={this.handleSubmit}>Submit</button>
+
+        <Link to={`/guests/${id}/package`}>View Your Spa Package</Link>
+
       </div>
     );
   }
@@ -50,7 +55,6 @@ class Guest extends React.Component {
       alert('Your serene profile has been updated');
       this.props.history.push(`/guests/${id}`);
     }).catch(e => {
-      // console.warn(e);
       alert('Oops! Something went wrong!');
     });
   }
