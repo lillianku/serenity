@@ -198,3 +198,13 @@ text-align: left;
 .guestButtons {
   margin: 10px;
 }
+
+.Guest {
+  font-family: 'Muli', sans-serif;
+  float: left;
+  text-align: left;
+  padding-left: 50px;
+  font-size: 15px;
+  font-variant: small-caps;
+
+}
