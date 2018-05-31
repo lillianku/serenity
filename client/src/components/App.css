@@ -29,27 +29,21 @@ h2 {
 
 li {
   list-style-type: none;
-
-}
-
-a {
-  color: white;
-}
-
-a:hover {
-  color: #808080;
-  text-decoration: none;
 }
 
 .link-style {
   float: center;
   display: inline-block;
-  color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 20px;
   text-decoration: none;
   font-family: 'Muli', sans-serif;
   font-size: 18px;
+  font-variant: small-caps;
+}
+
+a:hover, a:visited, a:active {
+ color: white;
 }
 
 .spa-image {
