@@ -14,11 +14,9 @@ h1 {
 
 h2 {
   font-family: 'Muli', sans-serif;
-  font-size: 20px;
-}
-
-p {
-  font-size: 18px;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .nav-links {
@@ -40,7 +38,7 @@ a {
 }
 
 a:hover {
-  color: #808080; 
+  color: #808080;
   text-decoration: none;
 }
 
@@ -60,4 +58,19 @@ a:hover {
   max-height: 50%;
   margin-top: -20px;
   overflow: hidden;
+}
+
+.about {
+margin: auto;
+font-size: 20px;
+color: #2F4F4F;
+font-family: 'Muli', sans-serif;
+background-color: white ;
+height: 350px;
+margin-top: -20px;
+text-align: left;
+}
+.about-font {
+  padding-left: 50px;
+  padding-right: 50px;
 }
