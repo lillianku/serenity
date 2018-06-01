@@ -1,6 +1,3 @@
-//Create component for New Guest
-//There should be a form that takes values for required information
-//When form is submitted, redirect to individual Guest page
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -11,6 +8,7 @@ class GuestNew extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
+
   render() {
     const {username, first_name, last_name, email, phone, allergies, comments} = this.state;
 
@@ -36,12 +34,14 @@ class GuestNew extends Component {
       </form>
     );
   }
+
   handleChange (e) {
     const {value, name} = e.target;
     this.setState({
       [name]: value
     });
   }
+
   handleSubmit (e) {
     const {username, first_name, last_name, email, phone, allergies, comments} = this.state;
     e.preventDefault();
@@ -52,4 +52,5 @@ class GuestNew extends Component {
     });
   }
 }
+
 export default GuestNew;

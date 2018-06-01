@@ -1,5 +1,3 @@
-//Create component for Package
-//Details for a guest's package should be rendered
 import React, { Component } from 'react';
 import axios from 'axios';
 import ServiceName from './ServiceName.js';
@@ -22,7 +20,7 @@ class Package extends Component {
     );
   }
 
-  renderPackages (){
+  renderPackages() {
     const {packageServices} = this.state;
     if(!packageServices) {
       return <div>Loading Package</div>;
@@ -34,17 +32,17 @@ class Package extends Component {
     );
   };
 
-  renderPackage(pkg){
+  renderPackage(pkg) {
     const {guest} = this.state;
     return(
-        <li key={pkg.package_id}>
-          <ServiceName service_id={pkg.service_id} guest_id={guest.guest_id} package_id={pkg.package_id} myhistory={this.props.history}/>
-          <button onClick={() =>this.handleRemove(pkg.package_id)}>Remove</button>
-        </li>
+      <li key={pkg.package_id}>
+        <ServiceName service_id={pkg.service_id} guest_id={guest.guest_id} package_id={pkg.package_id} myhistory={this.props.history}/>
+        <button onClick={() =>this.handleRemove(pkg.package_id)}>Remove</button>
+      </li>
     );
   };
 
-  handleRemove (id) {
+  handleRemove(id) {
     const {guest, packageServices} = this.state;
     axios.delete(`/guests/${guest.guest_id}/package/${id}`).then(res => {
       const newPackageServices = packageServices.filter(pkg => pkg.package_id !== id);
@@ -61,7 +59,6 @@ class Package extends Component {
       this.setState({packageServices: res.data});
     });
   }
-
 }
 
 export default Package;

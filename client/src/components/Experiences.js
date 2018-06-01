@@ -1,6 +1,3 @@
-//Create component for Experiences page
-//Each Experience should be rendered as a clickable Link
-//Will route to page with list of services for each Experience
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -31,7 +28,6 @@ class Experiences extends Component {
           {experiences.map(experience => this.renderExperiencesLink(experience))}
         </ul>
 
-
         <img className="xperiences" src={myImage} alt="classes"></img>
         <img className="xperiences" src={myImage2} alt="facials"></img>
         <img className="xperiences" src={myImage3} alt="massages"></img>
@@ -39,12 +35,6 @@ class Experiences extends Component {
       </div>
     );
   }
-
-  // handleClick() {
-  // this.setState(prevState => {
-  //   alert('TEST!')
-  //   });
-  // }
 
   renderExperiencesLink(experience) {
     return (
@@ -59,7 +49,6 @@ class Experiences extends Component {
       this.setState({experiences: res.data});
     });
   }
-
 };
 
   export default Experiences;

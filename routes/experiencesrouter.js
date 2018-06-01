@@ -1,9 +1,8 @@
-//This is where we will use the methods from methods/experiences.js
-//This is where we do the .then/.catch stuff
 const express = require('express'),
       ExperiencesRouter = express.Router(),
       Experiences = require('.././models/experiences');
 
+//find all experiences
 ExperiencesRouter.get('/', (req,res) => {
   Experiences.find().then((experiences) => {
     res.json(experiences);
@@ -12,6 +11,7 @@ ExperiencesRouter.get('/', (req,res) => {
   });
 });
 
+//find experiences by experienceid
 ExperiencesRouter.get('/:id', (req,res) => {
   Experiences.findById(req.params).then((experience) => {
     res.json(experience);
@@ -20,6 +20,7 @@ ExperiencesRouter.get('/:id', (req,res) => {
   });
 });
 
+//find services by experienceid
 ExperiencesRouter.get('/:id/services', (req,res) => {
   Experiences.findServicesByExperienceId(req.params).then((services) => {
     res.json(services);
@@ -28,6 +29,7 @@ ExperiencesRouter.get('/:id/services', (req,res) => {
   });
 });
 
+//find experienceid then service by id
 ExperiencesRouter.get('/:experienceid/services/:serviceid', (req,res) => {
   Experiences.findByTwoIds(req.params).then((service) => {
     res.json(service);
