@@ -3,7 +3,7 @@
 }
 
 .App-title {
-  line-height: 0.75em;
+  line-height: 0.85em;
   height: 175px;
 }
 
@@ -17,6 +17,7 @@ h2 {
   font-size: 30px;
   font-weight: bold;
   text-transform: uppercase;
+  margin: auto;
 }
 
 h3 {
@@ -33,6 +34,7 @@ h3 {
 
 li {
   list-style-type: none;
+  height: 50px;
 }
 
 .link-style {
@@ -110,7 +112,7 @@ text-align: left;
 
 .ExperiencesDiv {
   background-color: white ;
-  height: 350px;
+  height: 400px;
   margin-top: -20px;
 }
 
@@ -144,13 +146,13 @@ text-align: left;
   display: inline-block;
   padding:20px;
   margin: 50px;
-  border-radius: 10%;
+  border-radius: 10px;
 }
-.ServicesLinks a {
+.ServicesLinks a, a:visited, a:hover, a:active{
   color: #2F4F4F;
 }
 
-.ServicesLinks a:visited {
+/* .ServicesLinks a:visited {
   color: #2F4F4F;
 }
 .ServicesLinks a:hover {
@@ -158,10 +160,25 @@ text-align: left;
 }
 .ServicesLinks a:active {
   color: #2F4F4F;
+} */
+
+ul{
+  padding: 0px;
 }
 
 .PackageList {
   font-size: 20px;
+}
+
+.PackageRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px;
+}
+
+p{
+  margin: 10px;
 }
 
 .Service {
@@ -180,10 +197,14 @@ text-align: left;
 
 .GuestsAll {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   padding-left: 50px;
   padding-right: 50px;
   margin: 20px;
+  max-height: 100px;
+  height: 200px;
+  max-height: 100%;
 }
 .guestLink a {
   color: #2F4F4F;
@@ -191,9 +212,10 @@ text-align: left;
   font-variant: small-caps;
   background-color: white;
   padding:20px;
-  border-radius: 10%;
+  border-radius: 10px;
   border: 2px solid;
   border-color: #2F4F4F;
+  margin: 10px;
 }
 
 .ButtonContainer {
@@ -212,15 +234,18 @@ text-align: left;
   font-variant: small-caps;
   background-color: white;
   margin-top: -20px;
-  height: 400px;
+  height: 450px;
 }
 
 input {
   background-color: white;
   border: none;
+  border-bottom: 1px solid #2F4F4F;
+  margin: 2px;
 }
 
 .update-button, button {
   border-color: #2F4F4F;
   border: 2px solid;
+  border-radius: 10px;
 }
