@@ -61,3 +61,4 @@ Be able to create, read, update, and delete a guest profile, and have two relate
 * With more time, we would add sockets so that a guest could chat with a spa representative
 * We would add guest authentication, rather than displaying a list of guests
 * Additional styling
+* Alphabetize the guests

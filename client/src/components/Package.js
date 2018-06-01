@@ -33,12 +33,11 @@ class Package extends Component {
   };
 
   renderPackage(pkg) {
-    const {guest} = this.state;
     return(
-      <li key={pkg.package_id}>
-        <ServiceName service_id={pkg.service_id} guest_id={guest.guest_id} package_id={pkg.package_id} myhistory={this.props.history}/>
-        <button onClick={() =>this.handleRemove(pkg.package_id)}>Remove</button>
-      </li>
+        <li key={pkg.package_id} className="PackageRow">
+          <ServiceName service_id={pkg.service_id}/>
+          <button onClick={() =>this.handleRemove(pkg.package_id)}>Remove</button>
+        </li>
     );
   };
 
