@@ -15,6 +15,7 @@ class GuestNew extends Component {
     return (
       <form className="GuestNew" onSubmit={this.handleSubmit}>
         <br />
+        <p className="TextAreaTest">Guest Comments: <br/><textarea value={comments} name="comments" onChange={this.handleChange}/></p>
         <h2>CREATE YOUR GUEST PROFILE</h2>
         <br />
         Username: <input value={username} name="username" onChange={this.handleChange} required/>
@@ -29,7 +30,6 @@ class GuestNew extends Component {
         <br />
         Allergies: <input value={allergies} name="allergies" onChange={this.handleChange}/>
         <br />
-        Comments: <input value={comments} name="comments" onChange={this.handleChange}/>
         <br />
         <input className="update-button" type="submit" value="submit"/>
       </form>

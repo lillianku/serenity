@@ -18,6 +18,7 @@ class Guest extends React.Component {
     return (
       <div className="Guest">
         <br />
+        <p className="TextAreaTest">Guest Comments: <br /><textarea value={comments} name="comments" onChange={this.handleChange}/></p>
         <h2>Your Profile</h2>
         Guest Name: <input value={username} name="username" onChange={this.handleChange}/>
         <br />
@@ -31,7 +32,6 @@ class Guest extends React.Component {
         <br />
         Guest Allergies: <input value={allergies} name="allergies" onChange={this.handleChange}/>
         <br />
-        Guest Comments: <input value={comments} name="comments" onChange={this.handleChange}/>
         <br />
         <br />
 
