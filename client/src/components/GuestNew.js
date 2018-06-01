@@ -30,6 +30,7 @@ class GuestNew extends Component {
         Allergies: <input value={allergies} name="allergies" onChange={this.handleChange}/>
         <br />
         Comments: <input value={comments} name="comments" onChange={this.handleChange}/>
+        <br />
         <input className="update-button" type="submit" value="submit"/>
       </form>
     );

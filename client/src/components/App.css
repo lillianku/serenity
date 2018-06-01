@@ -34,7 +34,7 @@ h3 {
 
 li {
   list-style-type: none;
-  height: 50px;
+  height: 60px;
 }
 
 .link-style {
@@ -152,16 +152,6 @@ text-align: left;
   color: #2F4F4F;
 }
 
-/* .ServicesLinks a:visited {
-  color: #2F4F4F;
-}
-.ServicesLinks a:hover {
-  color: #2F4F4F;
-}
-.ServicesLinks a:active {
-  color: #2F4F4F;
-} */
-
 ul{
   padding: 0px;
 }
@@ -234,7 +224,7 @@ p{
   font-variant: small-caps;
   background-color: white;
   margin-top: -20px;
-  height: 450px;
+  height: 400px;
 }
 
 input {
