@@ -49,6 +49,10 @@ li {
   color: white;
 }
 
+.link-style a {
+ color: white;
+}
+
 .link-style a:hover {
  color: white;
 }
