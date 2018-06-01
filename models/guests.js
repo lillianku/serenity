@@ -1,8 +1,3 @@
-// MODELS
-
-//This is where we define the functions for the GuestsRouter
-//find, findOne, fineOneAndUpdate, delete, save, etc.
-
 const db = require('.././db/config');
 const Guest = {};
 

@@ -1,5 +1,3 @@
-//Create component for each Service
-//Details for this specific Service should be rendered
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -12,7 +10,7 @@ class Service extends Component {
   }
 
   render() {
-    const { service, username} = this.state;
+    const {service, username} = this.state;
     if(!service) { return <div>Loading Service</div>; }
     return (
       <div className="Service">
@@ -28,12 +26,10 @@ class Service extends Component {
          <input type="text" value={username} name="username" placeholder="Username" onChange={this.handleChange}/>
          <input type="submit" value="Add to your Package" />
        </form>
-
       </div>
     );
   }
 
-  // return "none" if there are no allergens instead of an empty string
   renderAllergens() {
     const { service } = this.state;
     if (!service.allergens) {
@@ -47,7 +43,7 @@ class Service extends Component {
     this.setState({
       [name]: value
     });
-  };
+  }
 
    handleSubmit(event) {
      const {service, username}= this.state;
@@ -57,7 +53,7 @@ class Service extends Component {
      axios.get(`/guests/username/${username}`).then(res => {
        let guest_id = res.data.guest_id;
        axios.post(`/guests/${guest_id}/package`, {guest_id, service_id}).then(res => {
-         this.props.history.push(`/guests/${guest_id}/package`); // change this to services page & add an alert
+         this.props.history.push(`/guests/${guest_id}/package`);
        }).catch(event => {
          alert('Service could not be added to package');
        });

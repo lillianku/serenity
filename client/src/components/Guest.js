@@ -1,6 +1,3 @@
-//Create component for single Guest
-//List the information for each Guest
-//Should have a for where we can update the guest information
 import React from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
@@ -20,6 +17,7 @@ class Guest extends React.Component {
 
     return (
       <div className="Guest">
+        <br />
         <h2>Your Profile</h2>
         Guest Name: <input value={username} name="username" onChange={this.handleChange}/>
         <br />
@@ -37,7 +35,7 @@ class Guest extends React.Component {
         <br />
         <br />
 
-        <span>
+        <span className="ButtonContainer">
           <button className="GuestButtons" onClick={this.handleSubmit}>Update</button>
           <Link className="GuestButtons" to={`/guests/${id}/package`}>View Your Spa Package</Link>
           <button className="GuestButtons" onClick={this.handleDelete}>Delete Your Profile</button>
@@ -58,7 +56,6 @@ class Guest extends React.Component {
     const { id } = this.props.match.params;
     const { username, first_name, last_name, email, phone, allergies, comments } = this.state;
     axios.put(`/guests/${id}`, { username, first_name, last_name, email, phone, allergies, comments }).then(res => {
-      alert('Your serene profile has been updated');
       this.props.history.push(`/guests/${id}`);
     }).catch(e => {
       alert('Oops! Something went wrong!');
@@ -68,7 +65,6 @@ class Guest extends React.Component {
   handleDelete () {
     const { id } = this.props.match.params;
     axios.delete(`/guests/${id}`).then(res => {
-      alert('Your serene profile has been deleted');
       this.props.history.push(`/guests`);
     }).catch(e => {
       alert('Oops! Could not delete your profile!');
@@ -82,15 +78,6 @@ class Guest extends React.Component {
       history.push('/guests');
     });
   }
-
-  // handleDelete () {
-  //   const { match, history } = this.props;
-  //   const { id } = match.params;
-  //   axios.delete(`/guests/${id}`).then(res => {
-  //     history.push('/guests');
-  //   });
-  // }
-
 
   componentDidMount () {
     const { id } = this.props.match.params;

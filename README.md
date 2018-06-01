@@ -48,11 +48,16 @@ Be able to create, read, update, and delete a guest profile, and have two relate
 * Removing an item from a page without refreshing the page, so that the app would remain a SPA
 * Creating a consistent style that all 4 group members agreed with
 * Using a data value to search/retrieve data from a separate table
+* Group Git: Rebasing before git push and coordinating merges
 
 ### App
 * https://blooming-savannah-13464.herokuapp.com/
-Screen shots of the different pages of the app
+![App](screenshots/beginningstage.png)
+![App](screenshots/trelloboard.png)
+![App](screenshots/midstagetest.png)
+![App](screenshots/final.png)
 
 ### Future Goals
 * With more time, we would add sockets so that a guest could chat with a spa representative
 * We would add guest authentication, rather than displaying a list of guests
+* Additional styling

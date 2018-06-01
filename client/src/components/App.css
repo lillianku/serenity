@@ -21,7 +21,6 @@ h2 {
 
 h3 {
   font-size: 20px;
-
 }
 
 .nav-links {
@@ -50,6 +49,7 @@ li {
 .link-style a:hover {
  color: white;
 }
+
 .link-style a:visited {
  color: white;
 }
@@ -195,8 +195,13 @@ text-align: left;
   border: 2px solid;
   border-color: #2F4F4F;
 }
-.guestButtons {
-  margin: 10px;
+
+.ButtonContainer {
+  float: left;
+}
+
+.GuestButtons {
+  margin-right: 20px;
 }
 
 .Guest, .GuestNew {
@@ -207,7 +212,7 @@ text-align: left;
   font-variant: small-caps;
   background-color: white;
   margin-top: -20px;
-  height: 350px;
+  height: 400px;
 }
 
 input {

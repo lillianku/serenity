@@ -8,9 +8,8 @@ import Experiences from '../components/Experiences.js';
 import Service from '../components/Service.js';
 import ServicesAll from '../components/ServicesAll.js';
 import Package from '../components/Package.js';
-import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
 import GuestNew from '../components/GuestNew.js';
-
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
 
 class App extends Component {
   render() {
@@ -19,8 +18,6 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <h1 className="App-title">Serenity</h1>
-            {/* <h4 className="App-tagline">A Full Service Spa</h4> */}
-
             <ul className="nav-links">
               <li className="link-style"> <Link to="/home">Home</Link></li>
               <li className="link-style"> <Link to="/about">About Us</Link></li>
@@ -28,9 +25,7 @@ class App extends Component {
               <li className="link-style"> <Link to="/guests">Guests</Link></li>
               <li className="link-style"> <Link to="/newguest">Create New Guest Profile</Link></li>
             </ul>
-
             <br />
-
           </header>
 
           <Switch>
@@ -45,11 +40,7 @@ class App extends Component {
               <Route exact path='/experiences/:experienceid/services/:serviceid' component={Service} />
               <Route exact path='/guests/:id/package' component={Package} />
           </Switch>
-
-
-
           </div>
-
       </Router>
     );
   }
