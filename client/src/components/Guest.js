@@ -67,7 +67,7 @@ class Guest extends React.Component {
     axios.delete(`/guests/${id}`).then(res => {
       this.props.history.push(`/guests`);
     }).catch(e => {
-      alert('Oops! Could not delete your profile!');
+      alert('Oops! Could not delete your profile! You have a reservation.');
     });
   }
 
