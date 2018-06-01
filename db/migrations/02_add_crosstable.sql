@@ -1,4 +1,4 @@
-\c serenity
+-- \c serenity
 
 CREATE TABLE packages(
   package_id SERIAL PRIMARY KEY,
